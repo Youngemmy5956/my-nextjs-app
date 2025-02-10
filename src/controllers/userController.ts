@@ -1,9 +1,9 @@
-
-import { NextApiRequest, NextApiResponse } from 'next';
+// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/controllers/userController.ts
+import { Request, Response } from 'express';
 import User from '../models/User';
 import dbConnect from '../utils/dbConnect';
 
-export const getUsers = async (req: NextApiRequest, res: NextApiResponse) => {
+export const getUsers = async (req: Request, res: Response) => {
   try {
     await dbConnect();
     const users = await User.find({});
@@ -14,10 +14,10 @@ export const getUsers = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export const createUser = async (req: NextApiRequest, res: NextApiResponse) => {
+export const createUser = async (req: Request, res: Response) => {
   try {
     await dbConnect();
-    const { name, email, username } = req.body; // Include username in the request body
+    const { name, email, username } = req.body;
     const newUser = new User({ name, email, username });
     await newUser.save();
     res.status(201).json(newUser);

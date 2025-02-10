@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/server.ts
-import express, { Request, Response } from 'express';
+import express from 'express';
 import next from 'next';
 import dotenv from 'dotenv';
-import User from '@/models/User';
+import userRoutes from './src/routes/user';
 
 dotenv.config(); // Load environment variables
 
@@ -14,18 +13,14 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // Define your custom API routes here
-  server.get('/api/users', async (req: Request, res: Response) => {
-    try {
-      const users = await User.find({});
-      res.status(200).json(users);
-    } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch users' });
-    }
-  });
+  // Middleware to parse JSON bodies
+  server.use(express.json());
+
+  // Use the user routes
+  server.use('/api', userRoutes);
 
   // Handle all other routes with Next.js
-  server.all('*', (req: Request, res: Response) => {
+  server.all('*', (req, res) => {
     return handle(req, res);
   });
 
