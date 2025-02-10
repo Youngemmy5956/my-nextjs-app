@@ -1,4 +1,4 @@
-
+// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/utils/dbConnect.ts
 import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI || '';
@@ -37,8 +37,6 @@ async function dbConnect() {
 
   if (!cached.promise) {
     const opts = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       bufferCommands: false,
     };
 

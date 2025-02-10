@@ -1,4 +1,3 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/server.ts
 import express from 'express';
 import next from 'next';
 import dotenv from 'dotenv';

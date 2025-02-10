@@ -1,4 +1,3 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/routes/users.ts
 import { Router } from 'express';
 import { getUsers, createUser } from '../controllers/userController';
 

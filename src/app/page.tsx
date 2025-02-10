@@ -1,4 +1,3 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/app/page.tsx
 import React from 'react';
 
 const Home: React.FC = () => {
