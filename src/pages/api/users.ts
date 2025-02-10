@@ -1,12 +1,15 @@
+// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/pages/api/users.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getUsers } from '../../controllers/userController';
+import { getUsers, createUser } from '../../controllers/userController';
 import { logger } from '../../middleware/logger';
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
-    return getUsers(req, res);
+    await getUsers(req, res);
+  } else if (req.method === 'POST') {
+    await createUser(req, res);
   } else {
-    res.setHeader('Allow', ['GET']);
+    res.setHeader('Allow', ['GET', 'POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 };
