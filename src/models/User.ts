@@ -1,4 +1,4 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/models/User.ts
+
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
 export interface IUser extends Document {

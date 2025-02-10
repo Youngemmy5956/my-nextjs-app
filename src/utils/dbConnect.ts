@@ -1,7 +1,7 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/utils/dbConnect.ts
+
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://emmanuelgodwin558:Youngemmy59565389@cluster0.ydxr6zv.mongodb.net/?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI || '';
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
