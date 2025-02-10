@@ -1,4 +1,3 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/pages/api/users.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getUsers } from '../../controllers/userController';
 import { logger } from '../../middleware/logger';
