@@ -1,4 +1,3 @@
-// filepath: /c:/Users/user/Desktop/BackendNestJs/my-nextjs-app/src/pages/api/user.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '../../utils/dbConnect';
 import User from "../../models/User";

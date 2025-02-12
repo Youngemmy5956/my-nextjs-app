@@ -1,5 +1,4 @@
-
-import mongoose, { Document, Model, Schema } from 'mongoose';
+import mongoose, { Document, Model, Schema } from "mongoose";
 
 export interface IUser extends Document {
   name: string;
@@ -10,9 +9,10 @@ export interface IUser extends Document {
 const UserSchema: Schema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  username: { type: String, required: true, unique: true } // Add the username field with unique constraint
+  username: { type: String, required: true, unique: true }, // Add the username field with unique constraint
 });
 
-const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
+const User: Model<IUser> =
+  mongoose.models.User || mongoose.model<IUser>("User", UserSchema);
 
 export default User;
